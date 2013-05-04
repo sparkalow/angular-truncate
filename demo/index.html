@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <title>Angular truncate text filter demo</title>
+    <script src="../test/lib/angular/angular.min.js"></script>
+    <script src="../src/truncate.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body ng-controller="demoController">
+<div class="container">
+    <h2>Angular Truncate Characters Demo</h2>
+    <fieldset>
+        <legend>Enter number of characters to truncate below</legend>
+        <label>Number of characters:</label>
+        <input ng-model="numChars" type="number"/><span class="help-inline">(will not break on a word)</span>
+
+        <label>Example Text</label>
+        <textarea ng-model="text" rows="4" placeholder="Enter test text">
+
+        </textarea>
+    </fieldset>
+
+    <h3>Code</h3>
+
+<pre>
+&lt;p&gt;
+    {<span></span>{text | characters:{{numChars}}<span></span>}<span></span>}
+&lt;/p&gt;
+ </pre>
+       <br>
+
+    <h3>Output</h3>
+    <div class="row"><blockquote class="span4">
+            <p>
+                {{text | characters:numChars}}
+            </p>
+        </blockquote></div>
+    <hr/>
+    <p>
+        <a href="https://raw.github.com/sparkalow/angular-infinite-scroll/master/src/infinite-scroll.js" class="btn btn-primary">Download</a><span class="help-inline">infinite-scroll.js</span>
+    </p>
+</div>
+</body>
+</html>
