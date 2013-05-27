@@ -8,38 +8,57 @@
     <script src="js/app.js"></script>
 </head>
 <body ng-controller="demoController">
-<div class="container">
-    <h2>Angular Truncate Characters Demo</h2>
-    <fieldset>
-        <legend>Enter number of characters to truncate below</legend>
-        <label>Number of characters:</label>
-        <input ng-model="numChars" type="number"/><span class="help-inline">(will not break on a word)</span>
+    <div class="container">
 
-        <label>Example Text</label>
-        <textarea ng-model="text" rows="4" placeholder="Enter test text">
+        <h2>Angular Truncate Demo</h2>
 
-        </textarea>
-    </fieldset>
+        <h3>Example Text</h3>
+        <textarea ng-model="text" rows="3" style="width:400px" placeholder="Enter test text"></textarea>
+        <br><br>
+        <div class="row">
+            <fieldset class="span6">
+                <legend>Truncate by characters</legend>
+                <label>Number of characters (will not break on a word):</label>
+                <input ng-model="numChars" type="number"/>
 
-    <h3>Code</h3>
+                <h4>Code</h4>
+                <pre>{<span></span>{ text | characters:{{ numChars }} }<span></span>}</pre>
 
-<pre>
-&lt;p&gt;
-    {<span></span>{text | characters:{{numChars}}<span></span>}<span></span>}
-&lt;/p&gt;
- </pre>
-       <br>
+                <h4>Output</h4>
+                <div class="row">
+                    <blockquote class="span4">
+                        <p>
+                            {{ text | characters:numChars }}
+                        </p>
+                    </blockquote>
+                </div>
 
-    <h3>Output</h3>
-    <div class="row"><blockquote class="span4">
-            <p>
-                {{text | characters:numChars}}
-            </p>
-        </blockquote></div>
-    <hr/>
-    <p>
-        <a href="https://raw.github.com/sparkalow/angular-infinite-scroll/master/src/infinite-scroll.js" class="btn btn-primary">Download</a><span class="help-inline">infinite-scroll.js</span>
-    </p>
-</div>
+            </fieldset>
+            <fieldset class="span6">
+                <legend>Truncate by words</legend>
+                <label>Number of words:</label>
+                <input ng-model="numWords" type="number"/>
+
+                <h4>Code</h4>
+                <pre>{<span></span>{ text | words:{{ numWords }} }<span></span>}</pre>
+
+                <h4>Output</h4>
+                <div class="row">
+                    <blockquote class="span4">
+                        <p>
+                            {{ text | words:numWords }}
+                        </p>
+                    </blockquote>
+                </div>
+
+            </fieldset>
+        </div>
+
+        <br><br>
+        <hr/>
+        <p>
+            <a href="https://raw.github.com/sparkalow/angular-infinite-scroll/master/src/infinite-scroll.js" class="btn btn-primary">Download</a><span class="help-inline">infinite-scroll.js</span>
+        </p>
+    </div>
 </body>
 </html>
