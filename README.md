@@ -1,6 +1,6 @@
 # angular truncate
 
-This project is a filter for Angularjs to truncate text strings to a set number of characters and
+This project is a filter for Angularjs to truncate text strings to a set number of characters or words and
 add ellipses when needed.
 
 
@@ -21,7 +21,7 @@ var myApp = angular.module('myApp', ['truncate']);
 When outputting text apply the filter
 ```html
  <p>
-    {{text | characters:25}}
+    {{ text | characters:25 }} or {{ text | words:5 }}
 </p>
 ```
 

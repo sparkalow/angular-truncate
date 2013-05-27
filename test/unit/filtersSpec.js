@@ -1,3 +1,5 @@
+/*global module, inject, beforeEach, expect, describe, it */
+
 'use strict';
 
 describe('truncate', function () {
