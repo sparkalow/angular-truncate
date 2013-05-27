@@ -32,6 +32,14 @@ describe('truncate', function () {
         it('should trim this down ignoring the space', function () {
             expect(characterFilter('123456789 10 11 12 13 14', 13)).toEqual('123456789 10...');
         });
+
+        it('should handle invalid numbers', function () {
+            expect(characterFilter('1234567890', 0)).toEqual('');
+        });
+
+        it('should handle invalid chars numbers type', function () {
+            expect(characterFilter('1234567890', 'abc')).toEqual('1234567890');
+        });
     });
 
     describe('words', function () {
@@ -67,6 +75,10 @@ describe('truncate', function () {
 
         it('should not trim invalid words numbers', function () {
             expect(wordFilter('abc def ghhi jkl mno pqr stu vw xyz', 0)).toEqual('');
+        });
+
+        it('should not trim invalid words type', function () {
+            expect(wordFilter('hello how u doin', 'abc')).toEqual('hello how u doin');
         });
 
         it('should not trim higher words numbers', function () {
