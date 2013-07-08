@@ -33,7 +33,7 @@ describe('truncate', function () {
             expect(characterFilter('123456789 10 11 12 13 14', 13)).toEqual('123456789 10...');
         });
 
-        it('should trim this down ignoring spaces', function () {
+        it('should trim this down breaking on words', function () {
             expect(characterFilter('123456789 10 11 12 13 14', 14,true)).toEqual('123456789 10 1...');
         });
 
