@@ -29,8 +29,16 @@ describe('truncate', function () {
             expect(characterFilter('1234567890', 5)).toEqual('12345...');
         });
 
-        it('should trim this down ignoring the space', function () {
+        it('should trim this down including the space', function () {
             expect(characterFilter('123456789 10 11 12 13 14', 13)).toEqual('123456789 10...');
+        });
+
+        it('should trim this down ignoring spaces', function () {
+            expect(characterFilter('123456789 10 11 12 13 14', 14,true)).toEqual('123456789 10 1...');
+        });
+
+        it('should trim this down ignoring the space', function () {
+            expect(characterFilter('Florida/New Jersey/California/Texas', 30, true)).toEqual('Florida/New Jersey/California/...');
         });
 
         it('should handle invalid numbers', function () {
