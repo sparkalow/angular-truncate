@@ -8,57 +8,52 @@
     <script src="js/app.js"></script>
 </head>
 <body ng-controller="demoController">
-    <div class="container">
+<div class="container">
 
-        <h2>Angular Truncate Demo</h2>
+    <h2>Angular Truncate Demo</h2>
 
-        <h3>Example Text</h3>
-        <textarea ng-model="text" rows="3" style="width:400px" placeholder="Enter test text"></textarea>
+    <div class="hero-unit">
+        <h4>Example Text</h4>
+        <textarea ng-model="text" rows="3" placeholder="Enter test text"></textarea>
         <br><br>
-        <div class="row">
-            <fieldset class="span6">
-                <legend>Truncate by characters</legend>
-                <label>Number of characters (will not break on a word):</label>
-                <input ng-model="numChars" type="number"/>
+        <strong>Truncate by characters</strong>
+        <label>Number of characters (will not break on a word):
 
-                <h4>Code</h4>
-                <pre>{<span></span>{ text | characters:{{ numChars }} }<span></span>}</pre>
+            <input ng-model="numChars" type="number"/></label>
+        <label>Break in the middle of words <input type="checkbox" ng-model="breakOnWord"/></label>
 
-                <h4>Output</h4>
-                <div class="row">
-                    <blockquote class="span4">
-                        <p>
-                            {{ text | characters:numChars }}
-                        </p>
-                    </blockquote>
-                </div>
+        <h4>Output</h4>
 
-            </fieldset>
-            <fieldset class="span6">
-                <legend>Truncate by words</legend>
-                <label>Number of words:</label>
-                <input ng-model="numWords" type="number"/>
-
-                <h4>Code</h4>
-                <pre>{<span></span>{ text | words:{{ numWords }} }<span></span>}</pre>
-
-                <h4>Output</h4>
-                <div class="row">
-                    <blockquote class="span4">
-                        <p>
-                            {{ text | words:numWords }}
-                        </p>
-                    </blockquote>
-                </div>
-
-            </fieldset>
+        <div class="well text-info">
+            <p>
+                {{ text | characters:numChars : breakOnWord }}
+            </p>
         </div>
-
-        <br><br>
-        <hr/>
-        <p>
-            <a href="https://raw.github.com/sparkalow/angular-infinite-scroll/master/src/infinite-scroll.js" class="btn btn-primary">Download</a><span class="help-inline">infinite-scroll.js</span>
-        </p>
+        <h4>Code</h4>
+        <pre>{<span></span>{ text | characters:{{ numChars }}: {{ breakOnWord }}<span></span>}</pre>
     </div>
+    <div class="hero-unit">
+        <strong>Truncate by words</strong>
+        <label>Number of words:
+        <input ng-model="numWords" type="number"/>
+        </label>
+        <h4>Code</h4>
+        <pre>{<span></span>{ text | words:{{ numWords }}:ignoreSpaces }<span></span>}</pre>
+
+        <h4>Output</h4>
+
+        <div class="well text-info">
+            <p>
+                {{ text | words:numWords }}
+            </p>
+        </div>
+    </div>
+
+    <br><br>
+    <hr/>
+    <p>
+        <a href="https://raw.github.com/sparkalow/angular-infinite-scroll/master/src/infinite-scroll.js" class="btn btn-primary">Download</a><span class="help-inline">infinite-scroll.js</span>
+    </p>
+</div>
 </body>
 </html>
