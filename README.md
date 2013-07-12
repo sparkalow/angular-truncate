@@ -26,7 +26,7 @@ var myApp = angular.module('myApp', ['truncate']);
 </p>
 ```
 
-By default, a word will not be truncated. Set the optional boolean after the character count to true
+By default, a _word_ will not be truncated. Set the optional boolean after the character count to true.
 ```html
  <p>
      {{ text | characters:25 :true}}
