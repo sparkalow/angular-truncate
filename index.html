@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <title>Angular truncate text filter demo</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/truncate.js"></script>
+    
+	<script>
+	// Declare app level module which depends on filters, and services
+var myApp = angular.module('myApp', ['truncate']);
+
+
+myApp.controller('demoController', function ($scope) {
+    $scope.text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.';
+    $scope.numChars = 20;
+    $scope.numWords = 5;
+    $scope.breakOnWord = false;
+});</script>
+</head>
+<body ng-controller="demoController">
+<div class="container">
+
+    <h2>Angular Truncate Demo</h2>
+
+    <div class="hero-unit">
+        <h4>Example Text</h4>
+        <textarea ng-model="text" rows="3" placeholder="Enter test text"></textarea>
+        <br><br>
+        <strong>Truncate by characters</strong>
+        <label>Number of characters (will not break on a word):
+
+            <input ng-model="numChars" type="number"/></label>
+        <label>Break in the middle of words <input type="checkbox" ng-model="breakOnWord"/></label>
+
+        <h4>Output</h4>
+
+        <div class="well text-info">
+            <p>
+                {{ text | characters:numChars : breakOnWord }}
+            </p>
+        </div>
+        <h4>Code</h4>
+        <pre>{<span></span>{ text | characters:{{ numChars }}: {{ breakOnWord }}<span></span>}</pre>
+    </div>
+    <div class="hero-unit">
+        <strong>Truncate by words</strong>
+        <label>Number of words:
+        <input ng-model="numWords" type="number"/>
+        </label>
+        <h4>Code</h4>
+        <pre>{<span></span>{ text | words:{{ numWords }}:ignoreSpaces }<span></span>}</pre>
+
+        <h4>Output</h4>
+
+        <div class="well text-info">
+            <p>
+                {{ text | words:numWords }}
+            </p>
+        </div>
+    </div>
+
+    <br><br>
+    <hr/>
+    <p>
+        <a href="https://raw.github.com/sparkalow/angular-truncate/master/src/truncate.js" class="btn btn-primary">Download</a><span class="help-inline">truncate.js</span>
+    </p>
+</div>
+</body>
+</html>
