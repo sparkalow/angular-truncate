@@ -3,7 +3,7 @@ angular.module('truncate', [])
         return function (input, chars, breakOnWord) {
             if (isNaN(chars)) return input;
             if (chars <= 0) return '';
-            if (input && input.length >= chars) {
+            if (input && input.length > chars) {
                 input = input.substring(0, chars);
 
                 if (!breakOnWord) {
