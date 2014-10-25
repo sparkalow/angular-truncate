@@ -27,7 +27,7 @@ angular.module('truncate', [])
             if (isNaN(words)) return input;
             if (words <= 0) return '';
             if (input) {
-                var inputWords = input.split(/\s+/);
+                var inputWords = input.split(/([^\s]+\n*|\n+)/g);
                 if (inputWords.length > words) {
                     input = inputWords.slice(0, words).join(' ') + '...';
                 }
