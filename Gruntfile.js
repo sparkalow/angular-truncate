@@ -16,16 +16,6 @@ module.exports = function(grunt) {
       ' * @license MIT License, http://www.opensource.org/licenses/MIT\n' +
       ' */\n'
     },
-    connect: {
-      devserver: {
-        options: {
-          port: 9999,
-          hostname: '0.0.0.0',
-          base: '.',
-          keepalive: true
-        }
-      }
-    },
     dirs: {
       dest: 'dist'
     },
@@ -80,11 +70,8 @@ module.exports = function(grunt) {
           reporters: ['dots'],
           singleRun: true
         }
-      },
-      server: {
-        options: {
-          singleRun: false
-        }
+
+
       },
       options: {
         configFile: 'test/karma.conf.js'
