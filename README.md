@@ -23,7 +23,7 @@ var myApp = angular.module('myApp', ['truncate']);
 ###When outputting text, apply the filter.
 ```html
  <p>
-    {{ text | characters:25 }} or {{ text | words:5 }}
+    {{ text | characters:25 }} or {{ text | splitcharacters:5 }} or {{ text | words:5 }}
 </p>
 ```
 

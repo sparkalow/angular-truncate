@@ -115,11 +115,11 @@ describe('truncate', function () {
         });
 
         it('should trim these down', function () {
-            expect(characterFilter('1234567890', 5)).toEqual('12...890');
+            expect(characterFilter('1234567890', 5)).toEqual('12…890');
         });
 
         it('should trim this down including the space', function () {
-            expect(characterFilter('123456789 10 11 12 13 14', 13)).toEqual('123456...2 13 14');
+            expect(characterFilter('123456789 10 11 12 13 14', 13)).toEqual('123456…2 13 14');
         });
 
         it('should handle invalid numbers', function () {
