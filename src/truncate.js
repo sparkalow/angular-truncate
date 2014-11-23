@@ -29,7 +29,7 @@ angular.module('truncate', [])
             if (input && input.length > chars) {
                 var prefix = input.substring(0, chars/2);
                 var postfix = input.substring(input.length-chars/2, input.length);
-                return prefix + '...' + postfix;
+                return prefix + '…' + postfix;
             }
             return input;
         };
