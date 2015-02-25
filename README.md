@@ -33,3 +33,10 @@ By default, a _word_ will not be truncated. Set the optional boolean after the c
      {{ text | characters:25 :true}}
  </p>
  ```
+ 
+Filters can also be chained together. It will truncate after 25 words or before 25 words if the 100 character limit is reached.
+ ```html
+  <p>
+     {{ text | words:25 | characters: 100}}
+ </p>
+ ```
