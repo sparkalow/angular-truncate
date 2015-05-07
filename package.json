@@ -1,13 +1,13 @@
 {
-  "name": "angular-truncate",
+  "name": "angular-truncate-2",
   "description": "Angular Truncate - Ellipsis for your templates",
   "version": "0.1.2",
-  "homepage": "http://sparkalow.github.com/angular-truncate",
+  "homepage": "https://github.com/BernardoSilva/angular-truncate",
   "author": "Brian Mathews (sparkalow)", 
     "main" : "src/truncate.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/sparkalow/angular-truncate.git"
+    "url": "git://github.com/BernardoSilva/angular-truncate.git"
   },
   "engines": {
     "node": ">= 0.8"
