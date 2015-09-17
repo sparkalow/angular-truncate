@@ -93,6 +93,18 @@ describe('truncate', function () {
             expect(wordFilter('abc def ghhi jkl mno pqr stu vw xyz', 25)).toEqual('abc def ghhi jkl mno pqr stu vw xyz');
         });
 
+        it('should trim these down without ellipsis postfix', function () {
+            expect(wordFilter('abc def ghhi jkl mno pqr stu vw xyz', 5, '')).toEqual('abc def ghhi jkl mno');
+        });
+
+        it('should trim these down with specific postfix', function () {
+            expect(wordFilter('abc def ghhi jkl mno pqr stu vw xyz', 5, '...')).toEqual('abc def ghhi jkl mno...');
+        });
+
+        it('should trim these down with blank postfix', function () {
+            expect(wordFilter('abc def ghhi jkl mno pqr stu vw xyz', 5, '')).toEqual('abc def ghhi jkl mno');
+        });
+
     });
 
     describe('splitcharacters', function () {
