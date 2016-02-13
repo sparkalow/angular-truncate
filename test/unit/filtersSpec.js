@@ -50,15 +50,15 @@ describe('truncate', function () {
         });
 
         it('should trim these down without ellipsis postfix', function () {
-            expect(characterFilter('abc def ghhi jkl mno pqr stu vw xyz', 10, false, '')).toEqual('abc def gh');
+            expect(characterFilter('abc def ghhi jkl mno pqr stu vw xyz', 10, false, '')).toEqual('abc def');
         });
 
         it('should trim these down with specific postfix', function () {
-            expect(characterFilter('abc def ghhi jkl mno pqr stu vw xyz', 10, false, '...')).toEqual('abc def gh...');
+            expect(characterFilter('abc def ghhi jkl mno pqr stu vw xyz', 10, false, '...')).toEqual('abc def...');
         });
 
         it('should trim these down with blank postfix', function () {
-            expect(characterFilter('abc def ghhi jkl mno pqr stu vw xyz', 5, false)).toEqual('abc def gh…');
+            expect(characterFilter('abc def ghhi jkl mno pqr stu vw xyz', 5, false)).toEqual('abc…');
         });
     });
 
