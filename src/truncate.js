@@ -1,8 +1,9 @@
 angular.module('truncate', [])
     .filter('characters', function () {
-        return function (input, chars, breakOnWord) {
+        return function (input, chars, breakOnWord, postfix) {
             if (isNaN(chars)) return input;
             if (chars <= 0) return '';
+            if (typeof postfix === 'undefined') postfix = '…';
             if (input && input.length > chars) {
                 input = input.substring(0, chars);
 
@@ -17,7 +18,7 @@ angular.module('truncate', [])
                         input = input.substr(0, input.length -1);
                     }
                 }
-                return input + '…';
+                return input + postfix;
             }
             return input;
         };
@@ -35,13 +36,14 @@ angular.module('truncate', [])
         };
     })
     .filter('words', function () {
-        return function (input, words) {
+        return function (input, words, postfix) {
             if (isNaN(words)) return input;
             if (words <= 0) return '';
+            if (typeof postfix === 'undefined') postfix = '…';
             if (input) {
                 var inputWords = input.split(/\s+/);
                 if (inputWords.length > words) {
-                    input = inputWords.slice(0, words).join(' ') + '…';
+                    input = inputWords.slice(0, words).join(' ') + postfix;
                 }
             }
             return input;

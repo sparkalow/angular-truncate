@@ -48,6 +48,18 @@ describe('truncate', function () {
         it('should handle invalid chars numbers type', function () {
             expect(characterFilter('1234567890', 'abc')).toEqual('1234567890');
         });
+
+        it('should trim these down without ellipsis postfix', function () {
+            expect(characterFilter('abc def ghhi jkl mno pqr stu vw xyz', 10, false, '')).toEqual('abc def');
+        });
+
+        it('should trim these down with specific postfix', function () {
+            expect(characterFilter('abc def ghhi jkl mno pqr stu vw xyz', 10, false, '...')).toEqual('abc def...');
+        });
+
+        it('should trim these down with blank postfix', function () {
+            expect(characterFilter('abc def ghhi jkl mno pqr stu vw xyz', 5, false)).toEqual('abc…');
+        });
     });
 
     describe('words', function () {
@@ -91,6 +103,18 @@ describe('truncate', function () {
 
         it('should not trim higher words numbers', function () {
             expect(wordFilter('abc def ghhi jkl mno pqr stu vw xyz', 25)).toEqual('abc def ghhi jkl mno pqr stu vw xyz');
+        });
+
+        it('should trim these down without ellipsis postfix', function () {
+            expect(wordFilter('abc def ghhi jkl mno pqr stu vw xyz', 5, '')).toEqual('abc def ghhi jkl mno');
+        });
+
+        it('should trim these down with specific postfix', function () {
+            expect(wordFilter('abc def ghhi jkl mno pqr stu vw xyz', 5, '...')).toEqual('abc def ghhi jkl mno...');
+        });
+
+        it('should trim these down with blank postfix', function () {
+            expect(wordFilter('abc def ghhi jkl mno pqr stu vw xyz', 5)).toEqual('abc def ghhi jkl mno…');
         });
 
     });
