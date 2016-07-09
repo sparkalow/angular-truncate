@@ -3,8 +3,8 @@
   "description": "Angular Truncate - Ellipsis for your templates",
   "version": "0.1.2",
   "homepage": "http://sparkalow.github.com/angular-truncate",
-  "author": "Brian Mathews (sparkalow)", 
-    "main" : "src/truncate.js",
+  "author": "Brian Mathews (sparkalow)",
+  "main": "src/truncate.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/sparkalow/angular-truncate.git"
@@ -18,13 +18,18 @@
       "url": "http://mit-license.org"
     }
   ],
-  "dependencies": {},
+  "dependencies": {
+    "grunt-contrib-connect": "^1.0.2",
+    "jasmine-core": "^2.4.1"
+  },
   "devDependencies": {
     "grunt": ">= 0.4.0",
-    "grunt-contrib-concat": "^0.5.0",
-    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-uglify": "*",
-    "karma": "~ 0.8.0"
+    "karma": "^1.1.1",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2"
   },
   "scripts": {
     "test": "karma start test/karma.conf.js --single-run --browsers Chrome",
