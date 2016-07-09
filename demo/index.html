@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="myApp" lang="en">
 <head>
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
     <title>Angular truncate text filter demo</title>
@@ -18,8 +18,8 @@
         <br><br>
         <strong>Truncate by characters</strong>
         <label>Number of characters (will not break on a word):
-
-            <input ng-model="numChars" type="number"/></label>
+            <input ng-model="numChars" type="number"/>
+        </label>
         <label>Break in the middle of words <input type="checkbox" ng-model="breakOnWord"/></label>
 
         <h4>Output</h4>
@@ -35,7 +35,7 @@
     <div class="hero-unit">
         <strong>Truncate by words</strong>
         <label>Number of words:
-        <input ng-model="numWords" type="number"/>
+            <input ng-model="numWords" type="number"/>
         </label>
         <h4>Code</h4>
         <pre>{<span></span>{ text | words:{{ numWords }}:ignoreSpaces }<span></span>}</pre>
