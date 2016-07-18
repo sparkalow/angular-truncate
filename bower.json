@@ -4,5 +4,6 @@
   "main": ["./src/truncate.js"],
   "dependencies": {
     "angular": "~1.4.11"
-  }
+  },
+  "ignore": []
 } 
