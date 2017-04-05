@@ -8,19 +8,19 @@ add ellipses when needed.
 ## How to use angular truncate
 
 
-###Include the javascript file.
+### Include the javascript file.
 
 ``` html
 <script src="truncate.js"></script>
 ```
 
-###Inject the `truncate` filter into your app module.
+### Inject the `truncate` filter into your app module.
 
 ```javascript
 var myApp = angular.module('myApp', ['truncate']);
 ```
 
-###When outputting text, apply the filter.
+### When outputting text, apply the filter.
 ```html
  <p>
     {{ text | characters:25 }} or {{ text | words:5 }}
