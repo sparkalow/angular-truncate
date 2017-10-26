@@ -17,7 +17,7 @@ angular.module('truncate', [])
                         input = input.substr(0, input.length -1);
                     }
                 }
-                return input + '…';
+                return input + '...';
             }
             return input;
         };
@@ -41,7 +41,7 @@ angular.module('truncate', [])
             if (input) {
                 var inputWords = input.split(/\s+/);
                 if (inputWords.length > words) {
-                    input = inputWords.slice(0, words).join(' ') + '…';
+                    input = inputWords.slice(0, words).join(' ') + '...';
                 }
             }
             return input;
